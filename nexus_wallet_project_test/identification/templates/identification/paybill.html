@@ -1,0 +1,49 @@
+{% extends "identification/base.html" %}
+
+{% block content %}
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            <h2>Pay Your Bill</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-5">
+          {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+          {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Bill Type</label>
+                    <select>
+                    <option disabled="true" selected>--Select Bill Type--</option>
+                    <option value="0">Electricity</option>
+                    <option value="1">Gas</option>
+                    <option value="2">Water</option>
+                    <option value="3">Telephone</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bill_number">Bill Number</label>
+                    <input type="number" name="mobile" class="form-control" id="mobile">
+                </div>
+                <div class="form-group">
+                    <label for="bill_amount">Amount</label>
+                    <input type="number" name="amount" class="form-control" id="amount">
+                </div>
+
+                <div class="form-group">
+                    <label for="username">date</label>
+                    <input type="text" name="username" class="form-control" id="username" aria-describedby="usernameHelp">
+                    <small id="usernameHelp" class="form-text text-muted">Your username must be unique. We'll let you know if someone has taken it already.</small>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Pay Bill</button>
+            </form>
+            <hr>
+
+        </div>
+    </div>
+{% endblock %}

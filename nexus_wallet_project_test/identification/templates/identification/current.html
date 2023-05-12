@@ -1,0 +1,92 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "identification/currentpage.css" %}">
+    <link rel="icon" type="image/png"  href="{% static 'identification/logo.png' %}">
+    <title>Nexus Wallet</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-md navbar-light bg-warning">
+<div class="container">
+    <a class="navbar-brand" href="{% url 'home' %}">
+         <img src="{% static 'identification/logo.png' %}" width="30" height="30" class="d-inline-block align-top">
+        <span>Nexus Wallet</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+    <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logoutuser' %}">Logout</a>
+                </li>
+
+        </ul>
+    </div>
+</div>
+</nav>
+
+<div class="container">
+
+  <h3>Welcome {{ name }}</h3>
+  <div class="row justify-content-center mt-5">
+      <div class="col-sm-5">
+        {% if error %}
+              <div class="alert alert-danger" role="alert">
+                  {{ error }}
+              </div>
+        {% endif %}
+        <a class="navbar-brand" href="{% url 'accountinfo' %}">
+             <img src="{% static 'identification/accinfo.png' %}" width="60" height="60" class="d-inline-block align-top">
+            <span>Account Info</span>
+        </a>
+        <br>
+        <br>
+        <a class="navbar-brand" href="{% url 'billpayment' %}">
+             <img src="{% static 'identification/bill.png' %}" width="60" height="60" class="d-inline-block align-top">
+            <span>Pay Bill</span>
+        </a>
+        <br><br>
+        <a class="navbar-brand" href="{% url 'moneysending' %}">
+             <img src="{% static 'identification/send.png' %}" width="60" height="60" class="d-inline-block align-top">
+            <span>Send Money</span>
+        </a>
+        <br><br>
+        <a class="navbar-brand" href="{% url 'pulloutmoney' %}">
+             <img src="{% static 'identification/cashout.png' %}" width="60" height="60" class="d-inline-block align-top">
+            <span>Cash Out</span>
+        </a><br><br>
+        <a class="navbar-brand" href="{% url 'showreceipts' %}">
+             <img src="{% static 'identification/receipt.jpg' %}" width="60" height="60" class="d-inline-block align-top">
+            <span>Receipt</span>
+        </a>
+        <br>
+        <br><br>
+        <a class="navbar-brand" href="{% url 'addmoney' %}">
+             <img src="{% static 'identification/addmoney.png' %}" width="60" height="60" class="d-inline-block align-top">
+            <span>Add Money</span>
+        </a><br><br>
+          <hr>
+
+      </div>
+  </div>
+
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
